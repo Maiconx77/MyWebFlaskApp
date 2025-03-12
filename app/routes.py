@@ -1,6 +1,6 @@
 # app/routes.py
 from app import app
-from flask import render_template
+from flask import render_template, request, redirect, url_for, flash
 
 # Rota para a página inicial
 @app.route('/')
@@ -8,8 +8,6 @@ def index():
     return render_template('index.html', title="Página Inicial")
 
 # app/routes.py
-from flask import request, redirect, url_for, flash
-
 @app.route('/saudacao/<nome>')
 def saudacao(nome):
     return f'Olá, {nome}!'
